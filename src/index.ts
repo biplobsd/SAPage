@@ -1,3 +1,2 @@
-import MyCounter from './components/App'
-
-export { MyCounter }
+import SAPage from './components/App'
+export { SAPage }
