@@ -4,7 +4,6 @@ import { render } from '@testing-library/react'
 import 'jest-canvas-mock'
 
 import { SAPage } from '../src'
-import { DevRole } from '../src/app/enums'
 
 describe('Common render', () => {
   it('renders without crashing', () => {
@@ -28,7 +27,7 @@ describe('Common render', () => {
           {
             name: 'Biplob Kumar Sutradhar',
             imgUrl: 'https://avatars.githubusercontent.com/u/43641536',
-            role: DevRole.leadDev,
+            role: 'Developer',
             url: 'https://github.com/biplobsd',
           },
         ]}

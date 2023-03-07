@@ -1,4 +1,4 @@
-import { DevRole } from './enums'
+import { DevRole } from './types'
 
 export interface DevPlateProps {
   url: string
