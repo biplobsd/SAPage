@@ -32,7 +32,7 @@ describe('Common render', () => {
             url: 'https://github.com/biplobsd',
           },
         ]}
-      />
+      />,
     )
   })
 })
