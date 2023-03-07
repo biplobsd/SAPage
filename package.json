@@ -1,6 +1,6 @@
 {
   "name": "sapage",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Speedout about page",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -10,9 +10,10 @@
     "url": "git+https://github.com/biplobsd/SAPage.git"
   },
   "scripts": {
-    "build": "yarn build:esm && yarn build:cjs",
+    "build": "yarn build:esm && yarn build:cjs && yarn build:css",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "build:css": "npx tailwindcss -i ./src/index.css -o ./dist/index.css",
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
     "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
     "test": "jest --config jestconfig.json",
@@ -58,6 +59,7 @@
     "typescript": "^4.7.3"
   },
   "dependencies": {
-    "@heroicons/react": "^2.0.16"
+    "@heroicons/react": "^2.0.16",
+    "daisyui": "^2.51.3"
   }
 }
