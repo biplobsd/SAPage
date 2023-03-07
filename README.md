@@ -1,60 +1,65 @@
-# my-react-typescript-package
+# SAPage
 
 [![NPM version][npm-image]][npm-url]
 [![Build][github-build]][github-build-url]
 ![npm-typescript]
 [![License][github-license]][github-license-url]
 
-This repo is the example of the article ["How to create and publish React Typescript npm package with demo and automated build"](https://medium.com/@igaponov/how-to-create-and-publish-react-typescript-npm-package-with-demo-and-automated-build-80c40ec28aca).
-
-You can clone it and step by step create your own NPM package and publish it.
-
-It is simple React counter.
-
-[**Live Demo**](https://gapon2401.github.io/my-react-typescript-package/)
+The "Speedout" page is a reusable React component that can be employed in various projects.
 
 ## Installation:
 
 ```bash
-npm install my-react-typescript-package --save-dev
-```
-
-or
-
-```bash
-yarn add -D my-react-typescript-package
+npm i sapage
 ```
 
 ## Usage :
 
-Add `MyCounter` to your component:
+Add `SAPage` to your component:
 
 ```js
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { MyCounter } from 'my-react-typescript-package'
+import { SAPage } from "sapage"
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
     <React.StrictMode>
         <div>
-            <h2>Default counter</h2>
-            <MyCounter />
-        </div>
-        <hr />
-        <div>
-            <h2>Counter with predefined value</h2>
-            <MyCounter value={5} />
+            <SAPage
+                app={{
+                    name: 'Test',
+                    url: 'https://test.com',
+                }}
+                devCompany={{
+                    name: 'Test company',
+                    url: 'https://test-company.com',
+                    year: 2023,
+                }}
+                mainImg={{
+                    logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg',
+                    alt: 'Npm log',
+                }}
+                reportUrl='https://github.com/biplobsd/SAPage/issues'
+                devs={[
+                    {
+                        name: 'Biplob Kumar Sutradhar',
+                        imgUrl: 'https://avatars.githubusercontent.com/u/43641536',
+                        role: 'Developer',
+                        url: 'https://github.com/biplobsd',
+                    },
+                ]}
+            />
         </div>
     </React.StrictMode>,
 )
 
 ```
 
-[npm-url]: https://www.npmjs.com/package/my-react-typescript-package
-[npm-image]: https://img.shields.io/npm/v/my-react-typescript-package
-[github-license]: https://img.shields.io/github/license/gapon2401/my-react-typescript-package
-[github-license-url]: https://github.com/gapon2401/my-react-typescript-package/blob/master/LICENSE
-[github-build]: https://github.com/gapon2401/my-react-typescript-package/actions/workflows/publish.yml/badge.svg
-[github-build-url]: https://github.com/gapon2401/my-react-typescript-package/actions/workflows/publish.yml
-[npm-typescript]: https://img.shields.io/npm/types/my-react-typescript-package
+[npm-url]: https://www.npmjs.com/package/sapage
+[npm-image]: https://img.shields.io/npm/v/sapage
+[github-license]: https://img.shields.io/github/license/biplobsd/sapage
+[github-license-url]: https://github.com/biplobsd/sapage/blob/master/LICENSE
+[github-build]: https://github.com/biplobsd/sapage/actions/workflows/publish.yml/badge.svg
+[github-build-url]: https://github.com/biplobsd/sapage/actions/workflows/publish.yml
+[npm-typescript]: https://img.shields.io/npm/types/sapage
