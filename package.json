@@ -19,7 +19,10 @@
     "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
     "test": "jest --config jestconfig.json",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run prettier && npm run lint"
+    "prepublishOnly": "npm test && npm run prettier && npm run lint",
+    "start": "npm-run-all --parallel watch-css watch-html",
+    "watch-css": "npx tailwindcss -i ./src/index.css -o ./dist/index.css --watch",
+    "watch-html": "parcel tests/index.html --dist-dir disttest"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -37,6 +40,7 @@
   "author": "Biplob Kumar Sutradhar (biplobsd)",
   "license": "MIT",
   "devDependencies": {
+    "@parcel/transformer-postcss": "^2.8.3",
     "@testing-library/react": "^13.3.0",
     "@types/jest": "^28.1.1",
     "@types/react": "^18.0.12",
@@ -51,8 +55,10 @@
     "jest": "^28.1.1",
     "jest-canvas-mock": "^2.4.0",
     "jest-environment-jsdom": "^28.1.1",
+    "parcel": "^2.8.3",
     "postcss": "^8.4.21",
     "prettier": "^2.6.2",
+    "process": "^0.11.10",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "tailwindcss": "^3.2.7",

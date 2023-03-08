@@ -1,4 +1,8 @@
 node_modules
 .idea
 dist
+disttest
 yarn-error.log
+.parcel-cache
+package-lock.json
+yarn.lock
