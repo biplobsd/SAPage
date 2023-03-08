@@ -21,6 +21,7 @@ Add `SAPage` to your component:
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { SAPage } from "sapage"
+import 'sapage/dist/index.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
