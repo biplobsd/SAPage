@@ -9,22 +9,29 @@ export interface DevPlateProps {
 }
 
 export interface SAPageProps {
-  mainImg: MainIMG
   app: App
+  poweredBy: PoweredBy
   devCompany: DevCompany
+  changeLogs: Record<string, { date: number; changes: string[] }>
   devs: DevPlateProps[]
   reportUrl: string
 }
 
-export interface MainIMG {
+export interface Logo {
   logoUrl: string
   alt: string
 }
 
 export interface App {
-  name: string
+  title: string
+  codeName: string
+  logo: Logo
+  version: string
+}
+
+export interface PoweredBy {
+  companyName: string
   url: string
-  year?: number
 }
 
 export interface DevCompany {

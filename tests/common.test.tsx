@@ -1,6 +1,9 @@
 import * as React from 'react'
 import { render } from '@testing-library/react'
-
+// @ts-ignore
+import packageJson from '../package.json'
+// @ts-ignore
+import changeLogs from '../changelog.json'
 import 'jest-canvas-mock'
 
 import { SAPage } from '../src'
@@ -10,17 +13,18 @@ describe('Common render', () => {
     render(
       <SAPage
         app={{
-          name: 'Test',
-          url: 'https://test.com',
+          title: packageJson.title,
+          codeName: packageJson.name,
+          logo: {
+            logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg',
+            alt: 'Npm log',
+          },
+          version: packageJson.version,
         }}
         devCompany={{
           name: 'Test company',
           url: 'https://test-company.com',
           year: 2023,
-        }}
-        mainImg={{
-          logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/db/Npm-logo.svg',
-          alt: 'Npm log',
         }}
         reportUrl='https://github.com/biplobsd/SAPage/issues'
         devs={[
@@ -31,6 +35,11 @@ describe('Common render', () => {
             url: 'https://github.com/biplobsd',
           },
         ]}
+        poweredBy={{
+          companyName: 'Test powered by company',
+          url: 'https://test-powered-by-company.com',
+        }}
+        changeLogs={changeLogs}
       />,
     )
   })

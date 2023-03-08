@@ -6,6 +6,7 @@ import DevPlate from './Dev_plate'
 
 const SAPage = (props: SAPageProps) => {
   const [mainDev, setMainDev] = useState(false)
+  const [clIsOpen, setCLIsopen] = useState(false)
   let tap = 0
 
   async function tapToOpen() {
@@ -20,10 +21,25 @@ const SAPage = (props: SAPageProps) => {
 
   return (
     <div className='flex flex-col items-center mx-2 tracking-wider sm:mx-5 lg:mx-10 xl:mx-10'>
-      <img onClick={tapToOpen} src={props.mainImg.logoUrl} alt={props.mainImg.alt} width={150} height={150} />
-      <div className='text-3xl font-semibold'>{props.app.name}</div>
-      <a href={props.app.url} target='_blank' rel='noopener noreferrer'>
-        <div className='text-sm textAni'>Powered by {props.app.name}</div>
+      <img onClick={tapToOpen} src={props.app.logo.logoUrl} alt={props.app.logo.alt} width={150} height={150} />
+      <div className='text-3xl font-semibold'>{props.app.title}</div>
+      <p
+        onClick={() => setCLIsopen(!clIsOpen)}
+        className='space-x-2 text-xs tracking-wider text-center cursor-pointer textAni'
+      >
+        <span className='font-semibold'>{props.app.codeName}</span>
+        <span className=''>v{props.app.version}</span>
+      </p>
+      <div className={`mt-4 collapse ${clIsOpen ? 'collapse-open' : ''} w-full max-w-xl `}>
+        <div className='w-full max-w-xl collapse-content '>
+          <textarea
+            className='w-full max-w-xl bg-slate-700/70 text-gray-50 textarea textarea-bordered textarea-lg'
+            defaultValue={JSON.stringify(props.changeLogs, null, 2)}
+          />
+        </div>
+      </div>
+      <a href={props.poweredBy.url} target='_blank' rel='noopener noreferrer'>
+        <div className='text-sm textAni'>Powered by {props.poweredBy.companyName}</div>
       </a>
       <a href={props.devCompany.name} target='_blank' rel='noopener noreferrer'>
         <div className='mt-3 text-xs textAni '>
