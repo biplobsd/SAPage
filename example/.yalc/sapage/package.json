@@ -1,7 +1,7 @@
 {
   "name": "sapage",
   "title": "SAPage",
-  "version": "1.0.7",
+  "version": "1.0.6",
   "description": "Speedout about page",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -18,7 +18,6 @@
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
     "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
     "test": "jest --config jestconfig.json",
-    "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run prettier && npm run lint"
   },
   "peerDependencies": {
@@ -36,31 +35,9 @@
   ],
   "author": "Biplob Kumar Sutradhar (biplobsd)",
   "license": "MIT",
-  "devDependencies": {
-    "@testing-library/react": "^13.3.0",
-    "@types/jest": "^28.1.1",
-    "@types/react": "^18.0.12",
-    "@typescript-eslint/eslint-plugin": "^5.27.1",
-    "@typescript-eslint/parser": "^5.27.1",
-    "autoprefixer": "^10.4.13",
-    "eslint": "^8.17.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.30.0",
-    "eslint-plugin-react-hooks": "^4.5.0",
-    "jest": "^28.1.1",
-    "jest-canvas-mock": "^2.4.0",
-    "jest-environment-jsdom": "^28.1.1",
-    "postcss": "^8.4.21",
-    "prettier": "^2.6.2",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "tailwindcss": "^3.2.7",
-    "ts-jest": "^28.0.4",
-    "typescript": "^4.7.3"
-  },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
     "daisyui": "^2.51.3"
-  }
+  },
+  "yalcSig": "eeac10c2dce6bb024ae3e3328e0faf10"
 }

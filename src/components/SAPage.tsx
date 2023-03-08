@@ -25,7 +25,7 @@ const SAPage = (props: SAPageProps) => {
       <div className='text-3xl font-semibold'>{props.app.title}</div>
       <p
         onClick={() => setCLIsopen(!clIsOpen)}
-        className='space-x-2 text-xs tracking-wider text-center cursor-pointer textAni'
+        className='space-x-2 text-xs tracking-wider text-center transition-all duration-700 cursor-pointer hover:tracking-widest hover:text-black'
       >
         <span className='font-semibold'>{props.app.codeName}</span>
         <span className=''>v{props.app.version}</span>
@@ -39,10 +39,12 @@ const SAPage = (props: SAPageProps) => {
         </div>
       </div>
       <a href={props.poweredBy.url} target='_blank' rel='noopener noreferrer'>
-        <div className='text-sm textAni'>Powered by {props.poweredBy.companyName}</div>
+        <div className='text-sm transition-all duration-700 hover:tracking-widest hover:text-black'>
+          Powered by {props.poweredBy.companyName}
+        </div>
       </a>
       <a href={props.devCompany.url} target='_blank' rel='noopener noreferrer'>
-        <div className='mt-3 text-xs textAni '>
+        <div className='mt-3 text-xs transition-all duration-700 hover:tracking-widest hover:text-black '>
           Developed by {props.devCompany.name}, {props.devCompany.year}
         </div>
       </a>
@@ -59,7 +61,13 @@ const SAPage = (props: SAPageProps) => {
       </div>
       <div className='flex justify-start w-full px-5 mt-5 text-2xl'>Issue or Bug report</div>
       <a className='w-full ' href={props.reportUrl} target='_blank' rel='noopener noreferrer'>
-        <div className='flex items-center justify-start w-full px-5 mt-3 hover:acc-bt tsd '>
+        <div
+          className='flex items-center justify-start w-full px-5 mt-3 transition-all duration-500 ease-in-out \
+        overflow-hidden hover:rounded-xl hover:px-4 hover:py-3 hover:text-xl hover:font-bold hover:tracking-wider \
+        hover:backdrop-blur hover:scale-105 hover:border-blue-400 hover:bg-slate-900/80 hover:text-slate-300/70 \
+        focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 active:scale-90
+        '
+        >
           <div className='w-16 h-16 '>
             <BugAntIcon />
           </div>

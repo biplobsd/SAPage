@@ -1,2 +1,2 @@
-import SAPage from './components/App'
+import SAPage from './components/SAPage'
 export { SAPage }
