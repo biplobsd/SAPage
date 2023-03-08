@@ -41,7 +41,7 @@ const SAPage = (props: SAPageProps) => {
       <a href={props.poweredBy.url} target='_blank' rel='noopener noreferrer'>
         <div className='text-sm textAni'>Powered by {props.poweredBy.companyName}</div>
       </a>
-      <a href={props.devCompany.name} target='_blank' rel='noopener noreferrer'>
+      <a href={props.devCompany.url} target='_blank' rel='noopener noreferrer'>
         <div className='mt-3 text-xs textAni '>
           Developed by {props.devCompany.name}, {props.devCompany.year}
         </div>
