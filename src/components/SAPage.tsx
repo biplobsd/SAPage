@@ -25,17 +25,27 @@ const SAPage = (props: SAPageProps) => {
       <div className='text-3xl font-semibold'>{props.app.title}</div>
       <p
         onClick={() => setCLIsopen(!clIsOpen)}
-        className='space-x-2 text-xs tracking-wider text-center transition-all duration-700 cursor-pointer hover:tracking-widest hover:text-black'
+        className={`${clIsOpen && 'font-bold tracking-[0.5em]'} flex mt-1 mb-4 space-x-2 text-xs tracking-wider text-center transition-all duration-700 cursor-pointer hover:tracking-widest hover:text-black`}
       >
         <span className='font-semibold'>{props.app.codeName}</span>
-        <span className=''>v{props.app.version}</span>
+        <span>v{props.app.version}</span>
       </p>
-      <div className={`mt-4 collapse ${clIsOpen ? 'collapse-open' : ''} w-full max-w-xl `}>
-        <div className='w-full max-w-xl collapse-content '>
-          <textarea
-            className='w-full max-w-xl bg-slate-700/70 text-gray-50 textarea textarea-bordered textarea-lg'
-            defaultValue={JSON.stringify(props.changeLogs, null, 2)}
-          />
+      <div className={`-mt-1 collapse ${clIsOpen ? 'collapse-open' : ''} w-full max-w-xl `}>
+        <div className='w-full max-w-xl collapse-content'>
+          <div className='overflow-y-auto max-h-96'>
+            <div className='flex flex-col justify-center mx-2 mt-2 mb-3 ring-2 rounded-xl ring-blue-500/10'>
+              {Object.keys(props.changeLogs).slice(0, 20).map(x =>
+                <div className='p-3 mx-3 my-2 bg-slate-400/10 hover:bg-blue-200/10 rounded-xl ring-1 ring-blue-300/40 h-fit'>
+                  <div className='text-sm font-semibold tracking-wider'>v{x}</div>
+                  <div className='text-xs opacity-70'>{new Date(props.changeLogs[x].date).toUTCString()}</div>
+                  <div className='py-1 my-1 divider' />
+                  <ul className='ml-4 text-sm list-disc opacity-80'>
+                    {props.changeLogs[x].changes.map(c => <li className='hover:list-decimal'>{c}</li>)}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
       <a href={props.poweredBy.url} target='_blank' rel='noopener noreferrer'>

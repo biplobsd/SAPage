@@ -1,4 +1,12 @@
 {
+  "1.0.2": {
+    "date": 1678245848,
+    "changes": ["Change 1", "Change 2", "Change 3", "Change 4"]
+  },
+  "1.0.1": {
+    "date": 1678245848,
+    "changes": ["Change 1", "Change 2", "Change 3", "Change 4"]
+  },
   "1.0.0": {
     "date": 1678245848,
     "changes": ["Change 1", "Change 2", "Change 3", "Change 4"]
