@@ -1,4 +1,3 @@
-
 import { SAPage } from '../src/index'
 //@ts-ignore
 import packageJson from '../package.json'
